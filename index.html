@@ -6,9 +6,115 @@
     <title>Byteproc Internships | Home</title>
     <link rel="stylesheet" href="css/style.css"/>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Head section -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
   </head>
   <body class="bg-white text-gray-800">
     <div id="header-placeholder"></div>
+    <section
+      class="h-100 relative bg-cover bg-center bg-no-repeat text-white lg:py-50 py-40"
+      style="background-image: url('assets/bg-intern.jpg'); "
+    >
+      <!-- Overlay -->
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-black/70 to-indigo-900/900 z-0"
+      ></div>
+
+      <!-- Content -->
+      <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+        <h1
+          class="text-5xl md:text-5xl sm:text-3xl font-bold leading-tight mb-4 drop-shadow-lg"
+          data-aos="fade-right"
+          >
+          Welcome to Byteproc Internships
+        </h1>
+        <p class="text-lg md:text-xl mb-4 italic text-indigo-100 "
+          data-aos="fade-right"
+          data-aos-delay="150"
+        >
+          Excellence in every byte of your journey.
+        </p>
+        <p class="text-xl ms:text-2xl mb-8 font-medium drop-shadow-md"
+          data-aos="fade-right"
+          data-aos-delay="250"
+        >
+          Empowering students with practical industry experience.</p>
+        <div class="flex justify-center gap-6">
+          <a
+            href="internships.html"
+            class="bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-blue-100 transition duration-300"
+          >
+            View Internships
+          </a>
+          <a
+            href="apply.html"
+            class="bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-blue-100 transition duration-300"
+          >
+            Apply Now
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-gray-50 py-16 px-4" id="about">
+      
+        <h2 class=" text-3xl text-center font-bold mb-2">About Byteproc Internships</h2>
+        <p class="text-gray-600 text-center max-w-xl mx-auto mb-10">Empowering Future Innovators Through Practical Experience</p>
+      
+      <div class="flex flex-col md:flex-row items-center gap-10 max-w-6xl mx-auto">
+        <div class="md:w-1/2 space-y-5">
+          <p class="text-gray-900 leading-relaxed">
+            At Byteproc Solutions, our internships go beyond classroom theory. We provide a platform where students gain hands-on experience, solve real-world problems, and collaborate with experienced professionals.
+          </p>
+          <p class="text-gray-900 leading-relaxed" >
+            Whether you're interested in Web Development, AI, or Mobile Apps, our mentors and real projects ensure you're ready for the tech industry.
+          </p>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+            <li class="flex items-center space-x-2">
+              <span class="text-blue-600 text-xl">🚀</span>
+              <span>Real Projects</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <span class="text-blue-600 text-xl">🧑‍🏫</span>
+              <span>Expert Mentorship</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <span class="text-blue-600 text-xl">🛠</span>
+              <span>In-Demand Skills</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <span class="text-blue-600 text-xl">📃</span>
+              <span>Certified Experience</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <span class="text-blue-600 text-xl">🌍</span>
+              <span>Remote Friendly</span>
+            </li>
+          </ul>
+        </div>
+        <div class="md:w-1/2">
+          <div class="swiper w-full rounded-lg shadow-lg">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="assets/team1.jpg" alt="Internship 1" class="w-full h-auto rounded-lg"/>
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/team2jpg.jpg" alt="Internship 1" class="w-full h-auto rounded-lg"/>
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/team3.jpeg" alt="Internship 1" class="w-full h-auto rounded-lg"/>
+              </div>
+            </div>
+            <div class="swiper-pagination mt-4"></div>
+          </div>
+            
+            
+        </div>
+      </div>
+    </section>
+    
     
     <script>
         fetch("header-footer.html")
@@ -19,5 +125,8 @@
         });
     </script>
     <script src="js/header-footer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    
   </body>
 </html>
