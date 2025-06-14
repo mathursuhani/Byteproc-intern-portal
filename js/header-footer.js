@@ -1,3 +1,5 @@
+
+
 function initHeaderMenu() {
   const menuToggle = document.getElementById("menu-toggle");
   const mobileMenu = document.getElementById("mobile-menu");
@@ -40,4 +42,18 @@ function initHeaderMenu() {
       }
     
   });
+  document.addEventListener('DOMContentLoaded', () => {
+  const topBar = document.getElementById("top-bar");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 10) {
+      topBar.classList.add("opacity-0", "-translate-y-full");
+    } else {
+      topBar.classList.remove("opacity-0", "-translate-y-full");
+    }
+  });
+});
 }
+
+
+
+

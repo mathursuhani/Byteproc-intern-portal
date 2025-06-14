@@ -4,18 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Byteproc Internships | Home</title>
-    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Head section -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   </head>
   <body class="bg-white text-gray-800">
     <div id="header-placeholder"></div>
     <section
-      class="h-100 relative bg-cover bg-center bg-no-repeat text-white lg:py-50 py-40"
-      style="background-image: url('assets/bg-intern.jpg'); "
+      class="min-h-screen relative bg-cover bg-center bg-no-repeat text-white lg:py-50 py-40"
+      style="background-image: url('assets/bg-intern.jpg')"
     >
       <!-- Overlay -->
       <div
@@ -23,25 +26,34 @@
       ></div>
 
       <!-- Content -->
-      <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+      <div class="relative z-10 max-w-5xl mx-auto px-6 py-6 text-center">
         <h1
           class="text-5xl md:text-5xl sm:text-3xl font-bold leading-tight mb-4 drop-shadow-lg"
-          data-aos="fade-right"
-          >
+          data-aos="fade-up"
+          data-aos-delay="1000"
+          data-aos-once="true"
+        >
           Welcome to Byteproc Internships
         </h1>
-        <p class="text-lg md:text-xl mb-4 italic text-indigo-100 "
-          data-aos="fade-right"
-          data-aos-delay="150"
+        <p
+          class="text-lg md:text-xl mb-4 italic text-indigo-100"
+          data-aos="fade-up"
+          data-aos-delay="300"
+          data-aos-duration="1000"
+          data-aos-once="true"
         >
           Excellence in every byte of your journey.
         </p>
-        <p class="text-xl ms:text-2xl mb-8 font-medium drop-shadow-md"
-          data-aos="fade-right"
-          data-aos-delay="250"
+        <p
+          class="text-xl ms:text-2xl mb-8 font-medium drop-shadow-md"
+          data-aos="fade-up"
+          data-aos-delay="500"
+          data-aos-duration="1000"
+          data-aos-once="true"
         >
-          Empowering students with practical industry experience.</p>
-        <div class="flex justify-center gap-6">
+          Empowering students with practical industry experience.
+        </p>
+        <div class="flex justify-center gap-6" data-aos="zoom-in" data-aos-delay="700" data-aos-duration="800" data-aos-once="true">
           <a
             href="internships.html"
             class="bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-blue-100 transition duration-300"
@@ -58,75 +70,123 @@
       </div>
     </section>
 
-    <section class="bg-gray-50 py-16 px-4" id="about">
-      
-        <h2 class=" text-3xl text-center font-bold mb-2">About Byteproc Internships</h2>
-        <p class="text-gray-600 text-center max-w-xl mx-auto mb-10">Empowering Future Innovators Through Practical Experience</p>
-      
-      <div class="flex flex-col md:flex-row items-center gap-10 max-w-6xl mx-auto">
-        <div class="md:w-1/2 space-y-5">
-          <p class="text-gray-900 leading-relaxed">
-            At Byteproc Solutions, our internships go beyond classroom theory. We provide a platform where students gain hands-on experience, solve real-world problems, and collaborate with experienced professionals.
-          </p>
-          <p class="text-gray-900 leading-relaxed" >
-            Whether you're interested in Web Development, AI, or Mobile Apps, our mentors and real projects ensure you're ready for the tech industry.
-          </p>
-          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
-            <li class="flex items-center space-x-2">
-              <span class="text-blue-600 text-xl">🚀</span>
-              <span>Real Projects</span>
-            </li>
-            <li class="flex items-center space-x-2">
-              <span class="text-blue-600 text-xl">🧑‍🏫</span>
-              <span>Expert Mentorship</span>
-            </li>
-            <li class="flex items-center space-x-2">
-              <span class="text-blue-600 text-xl">🛠</span>
-              <span>In-Demand Skills</span>
-            </li>
-            <li class="flex items-center space-x-2">
-              <span class="text-blue-600 text-xl">📃</span>
-              <span>Certified Experience</span>
-            </li>
-            <li class="flex items-center space-x-2">
-              <span class="text-blue-600 text-xl">🌍</span>
-              <span>Remote Friendly</span>
-            </li>
-          </ul>
-        </div>
-        <div class="md:w-1/2">
-          <div class="swiper w-full rounded-lg shadow-lg">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="assets/team1.jpg" alt="Internship 1" class="w-full h-auto rounded-lg"/>
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/team2jpg.jpg" alt="Internship 1" class="w-full h-auto rounded-lg"/>
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/team3.jpeg" alt="Internship 1" class="w-full h-auto rounded-lg"/>
-              </div>
-            </div>
-            <div class="swiper-pagination mt-4"></div>
+    <section class="min-h-screen relative overflow-hidden bg-gray-50 py-16 z-10" id="about">
+      <div
+        class="absolute -top-10 -left-10 w-40 h-40 bg-blue-200 rounded-full opacity-20 blur-2xl z-0"
+      ></div>
+      <div class="relative max-w-7xl mx-auto px-6 z-10">
+        <h2
+          class="text-3xl text-center font-bold mb-2 bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-500 bg-clip-text text-transparent animate-fade-in"
+        >
+          About Byteproc Internships
+        </h2>
+        <p class="text-gray-600 text-center max-w-xl mx-auto mb-10">
+          Empowering Future Innovators Through Practical Experience
+        </p>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div class="text-gray-800 space-y-4" data-aos="fade-right">
+            <p class="flex items-start gap-2">
+              <span class="text-blue-500 text-xl">💼</span>
+              At Byteproc Solutions, our internships go beyond classroom theory.
+              We provide a platform where students gain hands-on experience,
+              solve real-world problems, and collaborate with experienced
+              professionals.
+            </p>
+            <p class="flex items-start gap-2">
+              <span class="text-purple-500 text-xl">🚀</span>
+              Whether you're interested in Web Development, AI, or Mobile Apps,
+              our mentors and real projects ensure you're ready for the tech
+              industry.
+            </p>
+
+            <!-- Features Grid -->
+            <ul class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4">
+              <li
+                class="bg-white shadow rounded-lg px-3 py-2 flex items-center gap-2 hover:scale-105 transition"
+                data-aos="zoom-in"
+                data-aos-delay="100"
+              >
+                🚀 <span>Real Projects</span>
+              </li>
+              <li
+                class="bg-white shadow rounded-lg px-3 py-2 flex items-center gap-2 hover:scale-105 transition"
+                data-aos="zoom-in"
+                data-aos-delay="200"
+              >
+                👩‍🏫 <span>Expert Mentorship</span>
+              </li>
+              <li
+                class="bg-white shadow rounded-lg px-3 py-2 flex items-center gap-2 hover:scale-105 transition"
+                data-aos="zoom-in"
+                data-aos-delay="300"
+              >
+                🛠️ <span>In-Demand Skills</span>
+              </li>
+              <li
+                class="bg-white shadow rounded-lg px-3 py-2 flex items-center gap-2 hover:scale-105 transition"
+                data-aos="zoom-in"
+                data-aos-delay="400"
+              >
+                📄 <span>Certified Experience</span>
+              </li>
+              <li
+                class="bg-white shadow rounded-lg px-3 py-2 flex items-center gap-2 hover:scale-105 transition"
+                data-aos="zoom-in"
+                data-aos-delay="500"
+              >
+                🌍 <span>Remote Friendly</span>
+              </li>
+            </ul>
           </div>
-            
-            
+
+          <div data-aos="fade-left">
+            <div class="swiper mySwiper rounded-xl overflow-hidden shadow-lg">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="assets/team1.jpg"
+                    class="w-full h-auto"
+                    alt="Slide 1"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="assets/team2jpg.jpg"
+                    class="w-full h-auto"
+                    alt="Slide 2"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="assets/team3.jpeg"
+                    class="w-full h-auto"
+                    alt="Slide 3"
+                  />
+                </div>
+              </div>
+              <div class="swiper-pagination mt-2"></div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
         </div>
       </div>
+
+      
+          
+        
     </section>
-    
-    
+
     <script>
-        fetch("header-footer.html")
-        .then(res => res.text())
-        .then(data => {
-            document.getElementById("header-placeholder").innerHTML = data;
-            initHeaderMenu();
+      fetch("header-footer.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("header-placeholder").innerHTML = data;
+          initHeaderMenu();
         });
     </script>
     <script src="js/header-footer.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
-    
   </body>
 </html>
