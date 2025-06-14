@@ -42,16 +42,21 @@ function initHeaderMenu() {
       }
     
   });
-  document.addEventListener('DOMContentLoaded', () => {
-  const topBar = document.getElementById("top-bar");
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 10) {
-      topBar.classList.add("opacity-0", "-translate-y-full");
-    } else {
-      topBar.classList.remove("opacity-0", "-translate-y-full");
-    }
-  });
+  const topBar = document.getElementById("top-bar");
+  const header = document.getElementById("main-header");
+
+  if (window.scrollY > 0) {
+    topBar.classList.add("opacity-0", "-translate-y-full");
+    header.classList.remove("top-[40px]");
+    header.classList.add("top-0");
+  } else {
+    topBar.classList.remove("opacity-0", "-translate-y-full");
+    header.classList.remove("top-0");
+    header.classList.add("top-[40px]");
+  }
 });
+
 }
 
 
