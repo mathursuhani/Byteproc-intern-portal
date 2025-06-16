@@ -1,3 +1,4 @@
+AOS.init();
 document.addEventListener("DOMContentLoaded", function () {
   const internships = [
     {
@@ -150,7 +151,9 @@ document.addEventListener("DOMContentLoaded", function () {
     data.forEach((item) => {
       internshipContainer.innerHTML += `
           <div class="bg-gray-50 border rounded-lg shadow hover:shadow-lg p-5 transition-transform transform hover:scale-105 hover:shadow-xl
-          ">
+            "
+            data-aos="fade-up" data-aos-duration="600"
+            >
             <h3 class="text-lg font-semibold">${item.title}</h3>
             <p class="text-sm text-gray-600">${item.domain}</p>
             <p class="mt-2 text-sm">🕒 ${item.duration}</p>
