@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     data.forEach((item) => {
       internshipContainer.innerHTML += `
-          <div class="bg-white border rounded-lg shadow hover:shadow-lg p-5 transition-transform transform hover:scale-105 hover:shadow-xl
+          <div class="bg-gray-50 border rounded-lg shadow hover:shadow-lg p-5 transition-transform transform hover:scale-105 hover:shadow-xl
           ">
             <h3 class="text-lg font-semibold">${item.title}</h3>
             <p class="text-sm text-gray-600">${item.domain}</p>
