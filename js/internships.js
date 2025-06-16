@@ -62,8 +62,8 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       title: "Full Stack Developer",
-      domain: "Web Development",
-      duration: "6 Month",
+      domain: "Full Stack Development",
+      duration: "6 Months",
       stipend: "Paid",
       date: "2025-05-01",
       amount: 2000,
@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       title: "Digital Marketing",
-      domain: "Marketing",
+      domain: "Digital Marketing",
       duration: "3 Months",
       stipend: "Paid",
       date: "2025-07-01",
