@@ -1,31 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Byteproc Internships | Internships</title>
-    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-white text-gray-800"> 
+  </head>
+  <body class="bg-white text-gray-800">
     <div id="header-placeholder"></div>
-    
+    <main class="max-w-6xl mx-auto px-4 py-40">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold mb-2">Find Your Ideal Internship</h2>
+        <p class="text-gray-600">
+          Browse openings across various domains and apply with ease.
+        </p>
+      </div>
+
+      <!-- Filters -->
+      <div class="flex flex-wrap gap-4 justify-center mb-6">
+        <label for="domainFilter" class="sr-only">Domain</label>
+        <select
+          id="domainFilter"
+          class="px-4 py-2 border border-gray-300 rounded-md"
+        >
+          <option selected disabled>Domain</option>
+          <option>Web Development</option>
+          <option>App Development</option>
+          <option>Frontend Development</option>
+          <option>Backend Development</option>
+          <option>Full Stack Development</option>
+          <option>UI/UX Design</option>
+          <option>Graphic Design</option>
+          <option>Data Science</option>
+          <option>Marketing</option>
+          <option>Digital Marketing</option>
+          <option>Business Development</option>
+        </select>
+
+        <label for="filterDuration" class="sr-only">Duration</label>
+        <select
+          id="filterDuration"
+          class="px-4 py-2 border border-gray-300 rounded-md"
+        >
+          <option selected disabled>Duration</option>
+          <option>1 Month</option>
+          <option>2 Months</option>
+          <option>3 Months</option>
+          <option>6 Months</option>
+        </select>
+
+        <label for="stipendFilter" class="sr-only">Stipend</label>
+        <select
+          id="stipendFilter"
+          class="px-4 py-2 border border-gray-300 rounded-md"
+        >
+          <option selected disabled>Stipend</option>
+          <option>Paid</option>
+          <option>Unpaid</option>
+          <option>Performance Based</option>
+        </select>
+
+        <label for="sortFilter" class="sr-only">Sort By</label>
+        <select
+          id="sortFilter"
+          class="px-4 py-2 border border-gray-300 rounded-md"
+        >
+          <option selected disabled>Sort by</option>
+          <option value="oldest">Oldest</option>
+          <option value="newest">Newest</option>
+          <option value="highest">Highest Stipend</option>
+        </select>
+
+        <button
+          id="clearFilters"
+          class="px-4 py-2 border border-gray-300 rounded-md text-sm"
+        >
+          Clear Filters
+        </button>
+      </div>
+
+      <!-- Cards Container -->
+      <div
+        id="internshipContainer"
+        class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+      >
+        <!-- Internship cards will be populated from JS -->
+      </div>
+    </main>
     <div id="footer-placeholder"></div>
     <script>
       fetch("footer.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("footer-placeholder").innerHTML = data;
-      })
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        });
     </script>
     <script>
-        fetch("header.html")
-        .then(res => res.text())
-        .then(data => {
-            document.getElementById("header-placeholder").innerHTML = data;
-            initHeaderMenu();
+      fetch("header.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("header-placeholder").innerHTML = data;
+          initHeaderMenu();
         });
     </script>
     <script src="js/header-footer.js"></script>
-</body>
+    <script src="js/internships.js"></script>
+  </body>
 </html>
