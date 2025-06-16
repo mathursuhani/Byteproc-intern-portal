@@ -28,7 +28,7 @@ function initHeaderMenu() {
 
   let currentPage = window.location.pathname.split("/").pop().toLowerCase();
   if (!currentPage || currentPage === "") currentPage = "index.html";
-
+  console.log("Current Page", currentPage);
   document.querySelectorAll(".nav-link").forEach((link) => {
     const href = link.getAttribute("href").toLowerCase();
     const underline = link.querySelector("span");
