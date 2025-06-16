@@ -1,5 +1,3 @@
-
-
 function initHeaderMenu() {
   const menuToggle = document.getElementById("menu-toggle");
   const mobileMenu = document.getElementById("mobile-menu");
@@ -28,37 +26,33 @@ function initHeaderMenu() {
     });
   });
 
-  const currentPage = window.location.pathname.split("/").pop().toLowerCase() || "index.html";
+  let currentPage = window.location.pathname.split("/").pop().toLowerCase();
+  if (!currentPage || currentPage === "") currentPage = "index.html";
+
   document.querySelectorAll(".nav-link").forEach((link) => {
-      const href = link.getAttribute("href").toLowerCase();
-      const underline = link.querySelector("span");
-      if(underline){
-        underline.classList.remove("w-full");
-        underline.classList.add("w-0");
-      }
-      if(href === currentPage){
-        underline.classList.remove("w-0");
-        underline.classList.add("w-full");
-      }
-    
+    const href = link.getAttribute("href").toLowerCase();
+    const underline = link.querySelector("span");
+    if (underline) {
+      underline.classList.remove("w-full");
+      underline.classList.add("w-0");
+    }
+    if (href === currentPage) {
+      underline.classList.remove("w-0");
+      underline.classList.add("w-full");
+    }
   });
   window.addEventListener("scroll", () => {
-  const topBar = document.getElementById("top-bar");
-  const header = document.getElementById("main-header");
+    const topBar = document.getElementById("top-bar");
+    const header = document.getElementById("main-header");
 
-  if (window.scrollY > 0) {
-    topBar.classList.add("opacity-0", "-translate-y-full");
-    header.classList.remove("top-[40px]");
-    header.classList.add("top-0");
-  } else {
-    topBar.classList.remove("opacity-0", "-translate-y-full");
-    header.classList.remove("top-0");
-    header.classList.add("top-[40px]");
-  }
-});
-
+    if (window.scrollY > 0) {
+      topBar.classList.add("opacity-0", "-translate-y-full");
+      header.classList.remove("top-[40px]");
+      header.classList.add("top-0");
+    } else {
+      topBar.classList.remove("opacity-0", "-translate-y-full");
+      header.classList.remove("top-0");
+      header.classList.add("top-[40px]");
+    }
+  });
 }
-
-
-
-
