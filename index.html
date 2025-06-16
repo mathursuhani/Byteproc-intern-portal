@@ -390,10 +390,7 @@
         .then((res) => res.text())
         .then((data) => {
           document.getElementById("header-placeholder").innerHTML = data;
-          document.addEventListener("DOMContentLoaded", () => {
-            initHeaderMenu();
-          });
-
+          initHeaderMenu();
         });
     </script>
     <script src="js/header-footer.js"></script>
