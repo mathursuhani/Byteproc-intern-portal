@@ -66,10 +66,17 @@
           id="sortFilter"
           class="px-4 py-2 border border-gray-300 rounded-md"
         >
-          <option selected disabled>Sort by</option>
+          <option value="" selected disabled>-- Sort --</option>
+
           <option value="oldest">Oldest</option>
           <option value="newest">Newest</option>
           <option value="highest">Highest Stipend</option>
+        </select>
+
+        <select id="locationFilter" class="px-4 py-2 border border-gray-300 rounded-md">
+          <option selected disabled>Location</option>
+          <option>Remote</option>
+          <option>Onsite</option>
         </select>
 
         <button
@@ -83,7 +90,7 @@
       <!-- Cards Container -->
       <div
         id="internshipContainer"
-        class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        class=" grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
       >
         <!-- Internship cards will be populated from JS -->
       </div>

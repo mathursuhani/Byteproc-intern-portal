@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
       stipend: "Paid",
       date: "2025-06-10",
       amount: 2000,
+      location:"Remote",
+      skills:["React", "Tailwind CSS", "API"]
     },
     {
       title: "Frontend Web Developer",
@@ -15,6 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
       stipend: "Paid",
       date: "2025-07-01",
       amount: 3000,
+      location:"Onsite",
+      skills:["React", "Tailwind CSS", "API"]
     },
     {
       title: "Backend Web Developer",
@@ -23,6 +27,8 @@ document.addEventListener("DOMContentLoaded", function () {
       stipend: "Paid",
       date: "2025-07-01",
       amount: 3000,
+      location:"Onsite",
+      skills:["Node.js", "Express", "REST API", "GIT"]
     },
     {
       title: "Backend Web Developer",
@@ -31,6 +37,8 @@ document.addEventListener("DOMContentLoaded", function () {
       stipend: "Paid",
       date: "2025-06-01",
       amount: 2000,
+      location:"Remote",
+      skills:["Node.js", "MongoDB", "REST API"]
     },
     {
       title: "App Developer",
@@ -39,6 +47,8 @@ document.addEventListener("DOMContentLoaded", function () {
       stipend: "Paid",
       date: "2025-06-01",
       amount: 2000,
+      location:"Remote",
+      skills:["Flutter", "Firebase", "Dart", "REST API", "Git"]
     },
     {
       title: "Frontend Web Developer",
@@ -47,6 +57,8 @@ document.addEventListener("DOMContentLoaded", function () {
       stipend: "UnPaid",
       date: "2025-06-01",
       amount: 0,
+      location:"Remote",
+      skills:["HTML", "CSS", "Tailwind CSS","JavaScript"]
     },
     {
       title: "Full Stack Developer",
@@ -55,6 +67,8 @@ document.addEventListener("DOMContentLoaded", function () {
       stipend: "Paid",
       date: "2025-05-01",
       amount: 2000,
+      location:"Onsite",
+      skills:["React", "Node.js", "Express", "MongoDB", "REST API", "Git"]
     },
     {
       title: "UI/UX Designer",
@@ -63,6 +77,8 @@ document.addEventListener("DOMContentLoaded", function () {
       stipend: "Paid",
       date: "2025-05-01",
       amount: 3000,
+      location: "Remote",
+      skills: ["Figma", "Adobe XD", "Wireframing", "Prototyping", "User Research", "Design Thinking"]
     },
     {
       title: "Data Science",
@@ -71,6 +87,8 @@ document.addEventListener("DOMContentLoaded", function () {
       stipend: "Paid",
       date: "2025-05-01",
       amount: 5000,
+      location: "Onsite",
+      skills: ["Python", "Pandas", "NumPy", "Scikit-learn", "SQL", "Data Visualization", "Machine Learning"]
     },
     {
       title: "Graphic Designer",
@@ -79,6 +97,8 @@ document.addEventListener("DOMContentLoaded", function () {
       stipend: "UnPaid",
       date: "2025-06-01",
       amount: 0,
+      location: "Remote",
+      skills: ["Adobe Photoshop", "Adobe Illustrator", "Canva", "Creativity", "Branding", "Typography"]
     },
     {
       title: "Marketing",
@@ -86,7 +106,9 @@ document.addEventListener("DOMContentLoaded", function () {
       duration: "3 Months",
       stipend: "UnPaid",
       date: "2025-05-01",
-      amount: 0,
+      amount: 2000,
+      location: "Onsite",
+      skills: ["Digital Marketing", "SEO", "Content Creation", "Social Media Marketing", "Email Marketing", "Analytics Tools"]
     },
     {
       title: "Digital Marketing",
@@ -95,6 +117,8 @@ document.addEventListener("DOMContentLoaded", function () {
       stipend: "Paid",
       date: "2025-07-01",
       amount: 2000,
+      location: "Remote",
+      skills: ["SEO", "Google Ads", "Social Media Marketing", "Content Marketing", "Email Marketing", "Google Analytics"]
     },
     {
       title: "Business Development",
@@ -103,6 +127,8 @@ document.addEventListener("DOMContentLoaded", function () {
       stipend: "Paid",
       date: "2025-06-01",
       amount: 2000,
+      location: "Remote",
+      skills: ["Communication", "Lead Generation", "CRM Tools", "Sales Pitching", "Market Research", "Negotiation"]
     },
   ];
 
@@ -112,16 +138,34 @@ document.addEventListener("DOMContentLoaded", function () {
   const stipendFilter = document.getElementById("stipendFilter");
   const sortFilter = document.getElementById("sortFilter");
   const clearFilters = document.getElementById("clearFilters");
+  const locationFilter = document.getElementById("locationFilter");
 
   function renderInternships(data) {
     internshipContainer.innerHTML = "";
+    if (data.length === 0) {
+      internshipContainer.innerHTML =
+        "<p class='text-center col-span-full text-red-500'>❗ No internships match your filters.</p>";
+      return;
+    }
     data.forEach((item) => {
       internshipContainer.innerHTML += `
-          <div class="bg-white border rounded-lg shadow hover:shadow-lg p-5 transition">
+          <div class="bg-white border rounded-lg shadow hover:shadow-lg p-5 transition-transform transform hover:scale-105 hover:shadow-xl
+          ">
             <h3 class="text-lg font-semibold">${item.title}</h3>
             <p class="text-sm text-gray-600">${item.domain}</p>
             <p class="mt-2 text-sm">🕒 ${item.duration}</p>
-            <p class="text-sm">💰 ₹${item.amount} / month</p>
+            <p class="text-sm">
+                💰 ${item.amount === 0 ? "Unpaid" : `₹${item.amount} / month`}
+            </p>
+            <div class="mt-2 flex flex-wrap gap-2">
+            ${item.skills
+              .map(
+                (skill) =>
+                  `<span class="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded">${skill}</span>`
+              )
+              .join("")}
+            </div>
+
             <a href="apply.html?title=${encodeURIComponent(
               item.title
             )}&domain=${encodeURIComponent(item.domain)}" 
@@ -140,6 +184,8 @@ document.addEventListener("DOMContentLoaded", function () {
       filtered = filtered.filter((i) => i.duration === durationFilter.value);
     if (stipendFilter.value && !stipendFilter.disabled)
       filtered = filtered.filter((i) => i.stipend === stipendFilter.value);
+    if (locationFilter.value && !locationFilter.disabled)
+      filtered = filtered.filter((i) => i.location === locationFilter.value);
 
     if (sortFilter.value === "newest") {
       filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -148,7 +194,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } else if (sortFilter.value === "highest") {
       filtered.sort((a, b) => b.amount - a.amount);
     }
-    console.log("Filtered Data", filtered);
+    
     renderInternships(filtered);
   }
 
@@ -156,12 +202,14 @@ document.addEventListener("DOMContentLoaded", function () {
   durationFilter.addEventListener("change", filterAndSort);
   stipendFilter.addEventListener("change", filterAndSort);
   sortFilter.addEventListener("change", filterAndSort);
+  locationFilter.addEventListener("change", filterAndSort);
 
   clearFilters.addEventListener("click", () => {
     domainFilter.selectedIndex = 0;
     durationFilter.selectedIndex = 0;
     stipendFilter.selectedIndex = 0;
     sortFilter.selectedIndex = 0;
+    locationFilter.selectedIndex = 0;
     renderInternships(internships);
   });
 
