@@ -6,10 +6,33 @@
     <title>Byteproc Internships | Login</title>
     <link rel="stylesheet" href="css/style.css"/>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 </head>
-<body class="bg-white text-gray-800">
+<body class="bg-gradient-to-br from-blue-50 to-purple-50 min-h-screen text-gray-800">
     <div id="header-placeholder"></div>
-    
+    <main class="max-w-md mx-auto px-4 py-40">
+      <div class="bg-white p-6 rounded-xl shadow-xl">
+        
+        <form id="loginForm" class="space-y-4">
+          <h2 class="text-center text-2xl font-bold text-blue-600 mb-6">Login</h2>
+          <input type="email" placeholder="Email" class="w-full p-3 border rounded-lg border-gray-300" required/>
+          <input type="password" placeholder="Password" class="w-full p-3 border rounded-lg border-gray-300" required/>
+          <button type="submit" class="w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Login</button>
+          <p class="mt-6 text-center text-sm text-gray-600">Dont't have an account? <a href="#" id="showRegister" class="text-blue-600 hover:underline">Register</a></p>
+        </form>
+        
+        <form id="registerForm" class="space-y-4 hidden mt-6">
+          <h2 class="text-center text-2xl font-bold text-purple-600 mb-4">Register</h2>
+          <input type="text" placeholder="Full Name" class="w-full p-3 border rounded-lg border-gray-300" required/>
+          <input type="email" placeholder="Email" class="w-full p-3 border rounded-lg border-gray-300" required/>
+          <input type="tel" placeholder="Phone Number" class="w-full p-3 border rounded-lg border-gray-300" required/>
+          <input type="password" placeholder="Password" class="w-full p-3 border rounded-lg border-gray-300" required/>
+          <input type="password" placeholder="Confirm Password" class="w-full p-3 border rounded-lg border-gray-300" required/>
+          <button type="submit" class="w-full py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition">Register</button>
+          <p class="mt-4 text-center text-sm text-gray-600">Already have an account? <a href="#" id="showLogin" class="text-purple-600 hover:underline">Login</a></p>
+        </form>
+      </div>
+    </main>
     <div id="footer-placeholder"></div>
     <script>
       fetch("footer.html")
@@ -27,5 +50,7 @@
         });
     </script>
     <script src="js/header-footer.js"></script>
+    <script src="js/login.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </body>
 </html>
