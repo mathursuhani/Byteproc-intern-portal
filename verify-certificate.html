@@ -6,22 +6,25 @@
     <title>Byteproc Internships | Verify</title>
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="css/apply.css"/>
+    
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
 </head>
-<body class=" text-gray-800">
+<body class="bg-gradient-to-br from-blue-50 to-purple-50 text-gray-800">
     <div id="header-placeholder"></div>
-    <main class="max-w-2xl mx-auto px-4 py-40 animate-fade-in">
-      <div class="text-center mb-10">
+    <main class="max-w-2xl mx-auto px-4 py-40">
+      <div class="text-center mb-10" data-aos="fade-up" data-aos-delay="100">
         <h2 class="text-gray-800 text-3xl font-bold mb-2">Verify Certificate</h2>
         <p class="text-gray-600 mb-6">Enter your certificate ID and registration number to check authenticity.</p>
       </div>
-      <div class="flex flex-col items-center mb-6 space-y-4">
+      <div class="flex flex-col items-center mb-6 space-y-4" data-aos="fade-up" data-aos-delay="200">
         <input id="certNum" type="text" placeholder="Enter Certificate Number (Ex:- 2025/123)" class="w-full sm:w-2/3  p-2 border rounded-lg border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-500" required/>
         <input id="regNum" type="text" placeholder="Registration Number" class="w-full sm:w-2/3 p-2 border rounded-lg border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-500" required/>
         
       </div>
       <div class="flex justify-center">
-        <button onclick="verifyCertificate()" class=" font-semibold px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Verify</button>
+        <button data-aos="zoom-in" data-aos-delay="300" onclick="verifyCertificate()" class=" font-semibold px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Verify</button>
       </div>
       <div id="details" class="hidden p-4 sm:p-6 rounded-lg"></div>
     </main>
@@ -44,5 +47,6 @@
     </script>
     <script src="js/header-footer.js"></script>
     <script src="js/verify-certificate.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </body>
 </html>

@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", function () {
+  AOS.init();
+});
+
 const certificates = [
     {
         certNum: "2025/123",
@@ -25,6 +29,9 @@ function verifyCertificate(){
     const certNum = document.getElementById("certNum").value.trim();
     const regNum = document.getElementById("regNum").value.trim();
     const detailsDiv = document.getElementById("details");
+    detailsDiv.innerHTML = "";
+    detailsDiv.classList.add("hidden");
+    if(!certNum && !regNum) return;
     const match = certificates.find(
         (c) => c.certNum === certNum && c.regNum === regNum
     );
