@@ -7,7 +7,7 @@ document.querySelectorAll('input[type="file"]').forEach((input) => {
 });
 
 function handleSubmit(event) {
-    event.preventDefault(); // stop form temporarily
+    event.preventDefault(); 
 
     const form = document.getElementById("applyForm");
     // Trigger actual form submission after short delay
@@ -16,7 +16,7 @@ function handleSubmit(event) {
       Swal.fire({
         icon: "success",
         title: "Application Submitted!",
-        text: "✅ Thank you for applying. We’ll get in touch soon.",
+        text: "✅ Thank you for applying. We'll get in touch soon.",
         confirmButtonColor: "#3085d6"
       });
       form.reset(); // optional: reset form after submit
