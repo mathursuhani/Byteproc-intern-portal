@@ -22,4 +22,20 @@ function handleSubmit(event) {
       });
       form.reset(); // optional: reset form after submit
     }, 2000); // adjust delay if needed
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const title = params.get("title");
+  const domain = params.get("domain");
+
+  if (title) {
+    const titleInput = document.querySelector('input[name="title"]');
+    if (titleInput) titleInput.value = title;
   }
+
+  if (domain) {
+    const domainSelect = document.querySelector('select[name="domain"]');
+    if (domainSelect) domainSelect.value = domain;
+  }
+});
