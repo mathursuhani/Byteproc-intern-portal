@@ -1,3 +1,4 @@
+AOS.init();
 document.querySelectorAll('input[type="file"]').forEach((input) => {
   input.addEventListener("change", function () {
     if (this.files.length > 0) {
