@@ -10,11 +10,13 @@
 </head>
 <body class="bg-gray-50 text-gray-800" >
     <div id="header-placeholder"></div>
-    <main class="max-w-4xl mx-auto px-4 py-40 animate-fade-in ">
-      <div class="lg:max-w-6xl mx-auto shadow-lg bg-white rounded-xl">
-        <h2 class="text-gray-800 font-bold text-2xl mb-4 text-center p-4">Apply for Internship</h2>
-        <form id="applyForm" class="space-y-4 px-6 pb-6">
-          
+    <main class="max-w-4xl mx-auto px-4 py-40 transition-all duration-500 ease-in-out animate-fade-in ">
+      <div class="lg:max-w-6xl mx-auto shadow-lg bg-white rounded-2xl shadow-xl p-6 sm:p-10">
+        <h2 class="text-gray-800 font-bold text-2xl sm:text-3xl mb-4 text-center p-4">Apply for Internship</h2>
+        <form action="https://formsubmit.co/mathur.suhani324@gmail.com" method="POST" enctype="multipart/form-data" id="applyForm" target="hidden_iframe" onsubmit="handleSubmit(event)" class="space-y-4 px-6 pb-6">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+
           <input type="text" name="fullName" placeholder="Full Name" class="w-full p-2 border rounded " required/>
           <input type="email" name="email" placeholder="Email" class="w-full p-2 border rounded" required/>
           <input type="tel" name="phone" placeholder="Phone Number" class="w-full p-2 border rounded" required/>
@@ -43,17 +45,18 @@
           </select>
           <div>
             <label class="block text-gray-700 font-medium">Upload Passport Size Image<span class="text-sm text-gray-500">(JPG,PNG,MAX 2MB)</span></label>
-            <input type="file" accept="image/png,image/jpeg,.docx" placeholder="Passport Size Image" class="w-full p-2 rounded border" required/>
+            <input type="file" name="passport size image" accept="image/png,image/jpeg,.docx" placeholder="Passport Size Image" class="w-full p-2 rounded border" required/>
           </div>
           <div>
             <label class="block text-gray-700 font-medium">Upload Resume<span class="text-sm text-gray-500">(PDF,DOC,DOCX)</span></label>
-            <input type="file" accept=".pdf,.doc,.docx" placeholder="Passport Size Image" class="w-full p-2 rounded border" required/>
+            <input type="file" name="resume" accept=".pdf,.doc,.docx" placeholder="Passport Size Image" class="w-full p-2 rounded border" required/>
           </div>
           
           <button type="submit" class="w-full  bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Submit Application</button>
 
           
         </form>
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
       </div>
     </main>
     
@@ -74,6 +77,8 @@
             initHeaderMenu();
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script src="js/header-footer.js"></script>
     <script src="js/apply.js"></script>
 </body>
