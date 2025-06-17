@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     data.forEach((item) => {
       internshipContainer.innerHTML += `
-          <div class="bg-gray-50 border rounded-lg shadow hover:shadow-lg p-5 transition-transform transform hover:scale-105 hover:shadow-xl
+          <div class="bg-white border rounded-lg shadow hover:shadow-lg p-5 transition-transform transform hover:scale-105 hover:shadow-xl
             "
             data-aos="fade-up" data-aos-duration="600"
             >
