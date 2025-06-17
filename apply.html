@@ -5,11 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Byteproc Internships | Apply</title>
     <link rel="stylesheet" href="css/style.css"/>
+    
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-white text-gray-800" >
+<body class="bg-gray-50 text-gray-800" >
     <div id="header-placeholder"></div>
+    <main class="max-w-4xl mx-auto px-4 py-40 animate-fade-in ">
+      <div class="lg:max-w-6xl mx-auto shadow-lg bg-white rounded-xl">
+        <h2 class="text-gray-800 font-bold text-2xl mb-4 text-center p-4">Apply for Internship</h2>
+        <form id="applyForm" class="space-y-4 px-6 pb-6">
+          
+          <input type="text" name="fullName" placeholder="Full Name" class="w-full p-2 border rounded " required/>
+          <input type="email" name="email" placeholder="Email" class="w-full p-2 border rounded" required/>
+          <input type="tel" name="phone" placeholder="Phone Number" class="w-full p-2 border rounded" required/>
+          <input type="text" name="fatherName" placeholder="Father's Name" class="w-full p-2 border rounded" required/>
+          <input type="text" name="college" placeholder="College Name" class="w-full p-2 rounded border" required/>
+          <input type="number" name="registration" placeholder="Registration Number" class="w-full p-2 border rounded" required/>
+          <select class="w-full p-2 border rounded" name="course" required>
+            <option value="">Choose Course</option>
+            <option>BCA</option>
+            <option>B.tech</option>
+            <option>M.tech</option>
+            <option>MCA</option>
+          </select>
+          <input type="text" name="semester" placeholder="Semester" class="w-full p-2 rounded border" required/>
+          <select class="w-full p-2 border rounded" name="domain" required>
+            <option value="">Choose Domain</option>
+            <option>Web Development</option>
+            <option>App Development</option>
+            <option>Full Stack Development</option>
+            <option>UI/UX Design</option>
+            <option>Graphic Design</option>
+            <option>Data Science</option>
+            <option>Marketing</option>
+            <option>Digital Marketing</option>
+            <option>Business Development</option>
+          </select>
+          <div>
+            <label class="block text-gray-700 font-medium">Upload Passport Size Image<span class="text-sm text-gray-500">(JPG,PNG,MAX 2MB)</span></label>
+            <input type="file" accept="image/png,image/jpeg,.docx" placeholder="Passport Size Image" class="w-full p-2 rounded border" required/>
+          </div>
+          <div>
+            <label class="block text-gray-700 font-medium">Upload Resume<span class="text-sm text-gray-500">(PDF,DOC,DOCX)</span></label>
+            <input type="file" accept=".pdf,.doc,.docx" placeholder="Passport Size Image" class="w-full p-2 rounded border" required/>
+          </div>
+          
+          <button type="submit" class="w-full  bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Submit Application</button>
+
+          
+        </form>
+      </div>
+    </main>
     
+
     <div id="footer-placeholder"></div>
     <script>
       fetch("footer.html")
@@ -27,5 +75,6 @@
         });
     </script>
     <script src="js/header-footer.js"></script>
+    <script src="js/apply.js"></script>
 </body>
 </html>
