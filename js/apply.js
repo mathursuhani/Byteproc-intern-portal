@@ -11,7 +11,6 @@ function handleSubmit(event) {
     event.preventDefault(); 
 
     const form = document.getElementById("applyForm");
-    // Trigger actual form submission after short delay
     setTimeout(() => {
       form.submit(); // continue actual submit to iframe
       Swal.fire({
@@ -20,9 +19,10 @@ function handleSubmit(event) {
         text: "✅ Thank you for applying. We'll get in touch soon.",
         confirmButtonColor: "#3085d6"
       });
-      form.reset(); // optional: reset form after submit
-    }, 500); // adjust delay if needed
+      form.reset();
+    }, 500);
 }
+
 
 window.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
