@@ -2,56 +2,80 @@ document.addEventListener("DOMContentLoaded", function () {
   AOS.init();
 });
 
-const certificates = [
-    {
-        certNum: "2025/123",
-        regNum: "23106107001",
-        name: "Suhani Mathur",
-        email: "mathur.suhani324@gmail.com",
-        internship: "Frontend Web Developer",
-        duration: "1 Month",
+async function verifyCertificate() {
+  const certNum = document.getElementById("certNum").value.trim();
+  const regNum = document.getElementById("regNum").value.trim();
+  const detailsDiv = document.getElementById("details");
 
-        issueDate: "29 June 2025"
+  if (!certNum || !regNum) {
+    detailsDiv.innerHTML = `<p class="text-red-500 font-medium">❗ Both fields are required.</p>`;
+    detailsDiv.classList.remove("hidden");
+    return;
+  }
 
-    },
-    {
-        certNum: "2025/116",
-        regNum: "427201119401623",
-        name: "Khushi Singh",
-        email: "khushisinghchoti20@gmail.com",
-        internship: "MERN Stack Developer",
-        duration: "1 Month",
+  try {
+    const url = "https://script.google.com/macros/s/AKfycbxDzsXNBia9j6vxrjOu73xwIIqcCGXLhLTlKTkd7NEfMTQ-WO9_8d8xqFPtBvYORJnQ/exec";
+    console.log("Fetching from URL:", url);
+    
+    const res = await fetch(url);
+    console.log("Response Status:", res.status);
 
-        issueDate: "03 June 2025"
-    }
-]
-function verifyCertificate(){
-    const certNum = document.getElementById("certNum").value.trim();
-    const regNum = document.getElementById("regNum").value.trim();
-    const detailsDiv = document.getElementById("details");
-    detailsDiv.innerHTML = "";
-    detailsDiv.classList.add("hidden");
-    if(!certNum && !regNum) return;
-    const match = certificates.find(
-        (c) => c.certNum === certNum && c.regNum === regNum
+    if (!res.ok) throw new Error("Network response was not OK");
+
+    const data = await res.json();
+    console.log("Fetched data:", data);
+
+    const headers = data[0];
+    const certIndex = headers.indexOf("Certificate Number");
+    const regIndex = headers.indexOf("Registration Number");
+
+    const matched = data.slice(1).find(row =>
+      row[certIndex]?.toLowerCase() === certNum.toLowerCase() &&
+      row[regIndex]?.toLowerCase() === regNum.toLowerCase()
     );
-    if(match){
-        //add real validation / API Call here
-        detailsDiv.className = "mt-6 p-6 sm:p-8 rounded-xl shadow-lg bg-gradient-to-r from-green-100 via-green-50 to-green-100 border border-green-400 text-green-900 animate-fade-in transition-all duration-500"
+
+    if (matched) {
+      const [
         
-        detailsDiv.innerHTML = `
-            <p class="mb-3 font-bold text-green-800 text-lg">Certificate Verified!</p>
-            <p class="break-words whitespace-normal"><strong>Name: </strong>${match.name}</p>
-            <p class="break-words whitespace-normal"><strong>Email: </strong>${match.email}</p>
-            <p class="break-words whitespace-normal"><strong>Internship: </strong>${match.internship}</p>
-            <p class="break-words whitespace-normal"><strong>Duration: </strong>${match.duration}</p>
-            <p class="break-words whitespace-normal"><strong>Date of Issue: </strong>${match.issueDate}</p>
-        `;
-    }else{
-        detailsDiv.className = "mt-6 p-6 sm:p-8 rounded-xl shadow-lg bg-gradient-to-r from-red-100 via-red-50 to-red-100 border border-red-400 text-red-900 animate-fade-in transition-all duration-500";
-        detailsDiv.innerHTML = `
-            <p class="mb-2 font-semibold text-red-800">Certificate Not Found!</p>
-            <p class="text-black">Please check your Certificate Number and Registration Number.</p>
-        `;
+        fullName,
+        email,
+        phone,
+        fatherName,
+        college,
+        registration,
+        course,
+        semester,
+        domain,
+        resume,
+        photo,
+        timestamp,
+        certNumber
+      ] = matched;
+
+      detailsDiv.innerHTML = `
+        <div class="bg-white shadow-lg rounded-lg p-4 text-sm text-gray-700">
+          <p><strong>Name:</strong> ${fullName}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Phone:</strong> ${phone}</p>
+          <p><strong>College:</strong> ${college}</p>
+          <p><strong>College:</strong> ${registration}</p>
+          <p><strong>College:</strong> ${semester}</p>
+          <p><strong>Course:</strong> ${course}</p>
+          <p><strong>Domain:</strong> ${domain}</p>
+          <p><strong>Certificate Number:</strong> ${certNumber}</p>
+          <p class="text-green-600 font-semibold mt-2">✅ Certificate Verified</p>
+        </div>
+      `;
+    } else {
+      detailsDiv.innerHTML = `
+        <div class="text-red-600 font-medium text-center mt-4">❌ Certificate not found. Please check the details again.</div>
+      `;
     }
+
+    detailsDiv.classList.remove("hidden");
+  } catch (error) {
+    console.error("Error verifying:", error);
+    detailsDiv.innerHTML = `<p class="text-red-600">❗ Something went wrong. Please try again later.</p>`;
+    detailsDiv.classList.remove("hidden");
+  }
 }

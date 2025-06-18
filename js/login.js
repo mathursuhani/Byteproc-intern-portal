@@ -18,3 +18,4 @@ showLogin.addEventListener("click", (e) => {
       registerForm.classList.add("hidden");
       loginForm.classList.remove("hidden");
 });
+

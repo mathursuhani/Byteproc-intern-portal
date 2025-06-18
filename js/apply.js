@@ -21,7 +21,7 @@ function handleSubmit(event) {
         confirmButtonColor: "#3085d6"
       });
       form.reset(); // optional: reset form after submit
-    }, 2000); // adjust delay if needed
+    }, 500); // adjust delay if needed
 }
 
 window.addEventListener("DOMContentLoaded", () => {
