@@ -3,9 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard | Byteproc</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 </head>
-<body>
-    
+<body class="bg-gray-100 text-gray-800 ">
+    <div id="header-placeholder"></div>
+    <div class="max-w-xl mx-auto mt-10 p-6 bg-white shadow rounded-xl" id="dashboard">
+        <p class="text-gray-600">Loading...</p>
+    </div>
+    <div id="footer-placeholder"></div>
+    <script>
+      fetch("footer.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+      })
+    </script>
+    <script>
+        fetch("header.html")
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById("header-placeholder").innerHTML = data;
+            initHeaderMenu();
+        });
+    </script>
+    <script src="js/header-footer.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </body>
 </html>
