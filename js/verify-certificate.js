@@ -40,39 +40,17 @@ async function verifyCertificate() {
       );
 
     if (matched) {
-      const [
-        fullName,
-        email,
-        phone,
-        fatherName,
-        college,
-        registration,
-        course,
-        semester,
-        title,
-        domain,
-        
-        certNumber,
-        issueDate
-      ] = matched;
+      const skipIndexes = [10, 11, 12]; 
+      let html = `<div class="bg-white shadow-lg rounded-xl p-6 space-y-2 text-gray-800 text-sm border border-green-400">`;
 
-      detailsDiv.innerHTML = `
-        <div class="bg-white shadow-lg rounded-xl p-6 space-y-2 text-gray-800 text-sm border border-green-400">
-          <p><strong>Name:</strong> ${fullName}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Phone:</strong> ${phone}</p>
-          <p><strong>Father's Name:</strong> ${fatherName}</p>
-          <p><strong>College:</strong> ${college}</p>
-          <p><strong>Registration Number:</strong> ${registration}</p>
-          <p><strong>Course:</strong> ${course}</p>
-          <p><strong>Semester:</strong> ${semester}</p>
-          <p><strong>Internship Title:</strong> ${title}</p>
-          <p><strong>Domain:</strong> ${domain}</p>
-          <p><strong>Certificate Number:</strong> ${certNumber}</p>
-          <p><strong>Issued On:</strong> ${issueDate}</p>
-          <p class="text-green-600 font-semibold mt-2">✅ Certificate Verified Successfully</p>
-        </div>
-      `;
+      headers.forEach((header, index) => {
+        if (skipIndexes.includes(index)) return;
+        html += `<p><strong>${header}:</strong> ${matched[index]}</p>`;
+      });
+
+      html += `<p class="text-green-600 font-semibold mt-2">✅ Certificate Verified Successfully</p></div>`;
+      detailsDiv.innerHTML = html;
+      
     } else {
       detailsDiv.innerHTML = `
         <div class="text-red-600 font-medium text-center mt-4">❌ Certificate not found. Please check the details again.</div>
