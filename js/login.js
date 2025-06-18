@@ -34,7 +34,7 @@ registerForm.addEventListener("submit", async (e) => {
   }
 
   const res = await fetch(
-    "https://script.google.com/macros/s/AKfycbyfNQxCEvm8ej_dCyfqukkiY07S3N0PLxxTWrWDCXVbTV50gikbfMSu9TjJx6cWiD-HcA/exec",
+    "https://script.google.com/macros/s/AKfycbxRYfBo3WtZHX_U_SjrJNs_olnuX0qQXbxWwydp5NAc96Q_D3BsGODv_QnbrhqWf44c/exec",
     {
       method: "POST",
       body: new URLSearchParams({
@@ -61,7 +61,7 @@ loginForm.addEventListener("submit", async (e) => {
     const email = inputs[0].value;
     const password = inputs[1].value;
 
-    const res = await fetch("https://script.google.com/macros/s/AKfycbyfNQxCEvm8ej_dCyfqukkiY07S3N0PLxxTWrWDCXVbTV50gikbfMSu9TjJx6cWiD-HcA/exec", {
+    const res = await fetch("https://script.google.com/macros/s/AKfycbxRYfBo3WtZHX_U_SjrJNs_olnuX0qQXbxWwydp5NAc96Q_D3BsGODv_QnbrhqWf44c/exec", {
       method: "POST",
       body: new URLSearchParams({
         action: "login",
