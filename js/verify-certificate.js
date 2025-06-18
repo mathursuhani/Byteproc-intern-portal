@@ -19,7 +19,7 @@ async function verifyCertificate() {
 
   try {
     const url =
-      "https://script.google.com/macros/s/AKfycby0o3mPzafQtTWd15pEWBF1u4jehGRG0DY6appTtWG0QxIkrdFDfeXGQpEc6PDGr-7_/exec";
+      "https://script.google.com/macros/s/AKfycbyTuWu6CWXJLZio-Im1LqLp6F3_Rpyqz-HWwzLn-CarB5kcbrqjekQyVv3yNKL8juCU/exec";
     const res = await fetch(url);
 
     if (!res.ok) throw new Error("Network response was not OK");
