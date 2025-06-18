@@ -18,7 +18,8 @@ async function verifyCertificate() {
   }
 
   try {
-    const url = "https://script.google.com/macros/s/AKfycby0o3mPzafQtTWd15pEWBF1u4jehGRG0DY6appTtWG0QxIkrdFDfeXGQpEc6PDGr-7_/exec";
+    const url =
+      "https://script.google.com/macros/s/AKfycby0o3mPzafQtTWd15pEWBF1u4jehGRG0DY6appTtWG0QxIkrdFDfeXGQpEc6PDGr-7_/exec";
     const res = await fetch(url);
 
     if (!res.ok) throw new Error("Network response was not OK");
@@ -30,10 +31,13 @@ async function verifyCertificate() {
     const certIndex = headers.indexOf("Certificate Number");
     const regIndex = headers.indexOf("Registration Number");
 
-    const matched = data.slice(1).find(row =>
-      row[certIndex]?.toLowerCase() === certNum.toLowerCase() &&
-      row[regIndex]?.toLowerCase() === regNum.toLowerCase()
-    );
+    const matched = data
+      .slice(1)
+      .find(
+        (row) =>
+          String(row[certIndex]).toLowerCase() === certNum.toLowerCase() &&
+          String(row[regIndex]).toLowerCase() === regNum.toLowerCase()
+      );
 
     if (matched) {
       const [
@@ -48,7 +52,7 @@ async function verifyCertificate() {
         title,
         domain,
         timestamp,
-        certNumber
+        certNumber,
       ] = matched;
 
       detailsDiv.innerHTML = `
@@ -78,4 +82,3 @@ async function verifyCertificate() {
     detailsDiv.innerHTML = `<p class="text-red-600">❗ Something went wrong. Please try again later.</p>`;
   }
 }
-
