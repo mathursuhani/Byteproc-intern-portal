@@ -7,24 +7,25 @@ async function verifyCertificate() {
   const regNum = document.getElementById("regNum").value.trim();
   const detailsDiv = document.getElementById("details");
 
+  // Clear previous result
+  detailsDiv.innerHTML = "";
+  detailsDiv.classList.remove("hidden");
+
+  // Validation
   if (!certNum || !regNum) {
     detailsDiv.innerHTML = `<p class="text-red-500 font-medium">❗ Both fields are required.</p>`;
-    detailsDiv.classList.remove("hidden");
     return;
   }
 
   try {
-    const url = "https://script.google.com/macros/s/AKfycbxDzsXNBia9j6vxrjOu73xwIIqcCGXLhLTlKTkd7NEfMTQ-WO9_8d8xqFPtBvYORJnQ/exec";
-    console.log("Fetching from URL:", url);
-    
+    const url = "https://script.google.com/macros/s/AKfycbxDzsXNBia9j6vxrjOu73xwIIqcCGXLhLTlKTkd7NEfMTQ-WO9_8d8xqFPtBvYORJnQ/exec?action=read";
     const res = await fetch(url);
-    console.log("Response Status:", res.status);
 
     if (!res.ok) throw new Error("Network response was not OK");
 
     const data = await res.json();
-    console.log("Fetched data:", data);
 
+    // Get headers and relevant column indexes
     const headers = data[0];
     const certIndex = headers.indexOf("Certificate Number");
     const regIndex = headers.indexOf("Registration Number");
@@ -36,7 +37,6 @@ async function verifyCertificate() {
 
     if (matched) {
       const [
-        
         fullName,
         email,
         phone,
@@ -45,25 +45,27 @@ async function verifyCertificate() {
         registration,
         course,
         semester,
+        title,
         domain,
-        resume,
-        photo,
         timestamp,
         certNumber
       ] = matched;
 
       detailsDiv.innerHTML = `
-        <div class="bg-white shadow-lg rounded-lg p-4 text-sm text-gray-700">
+        <div class="bg-white shadow-lg rounded-xl p-6 space-y-2 text-gray-800 text-sm border border-green-400">
           <p><strong>Name:</strong> ${fullName}</p>
           <p><strong>Email:</strong> ${email}</p>
           <p><strong>Phone:</strong> ${phone}</p>
+          <p><strong>Father's Name:</strong> ${fatherName}</p>
           <p><strong>College:</strong> ${college}</p>
-          <p><strong>College:</strong> ${registration}</p>
-          <p><strong>College:</strong> ${semester}</p>
+          <p><strong>Registration Number:</strong> ${registration}</p>
           <p><strong>Course:</strong> ${course}</p>
+          <p><strong>Semester:</strong> ${semester}</p>
+          <p><strong>Internship Title:</strong> ${title}</p>
           <p><strong>Domain:</strong> ${domain}</p>
           <p><strong>Certificate Number:</strong> ${certNumber}</p>
-          <p class="text-green-600 font-semibold mt-2">✅ Certificate Verified</p>
+          <p><strong>Issued On:</strong> ${timestamp}</p>
+          <p class="text-green-600 font-semibold mt-2">✅ Certificate Verified Successfully</p>
         </div>
       `;
     } else {
@@ -71,11 +73,9 @@ async function verifyCertificate() {
         <div class="text-red-600 font-medium text-center mt-4">❌ Certificate not found. Please check the details again.</div>
       `;
     }
-
-    detailsDiv.classList.remove("hidden");
   } catch (error) {
     console.error("Error verifying:", error);
     detailsDiv.innerHTML = `<p class="text-red-600">❗ Something went wrong. Please try again later.</p>`;
-    detailsDiv.classList.remove("hidden");
   }
 }
+
