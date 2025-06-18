@@ -44,15 +44,16 @@ async function verifyCertificate() {
         fullName,
         email,
         phone,
-        fatherName,
+        
         college,
         registration,
         course,
         semester,
         title,
         domain,
-        timestamp,
+        
         certNumber,
+        issueDate
       ] = matched;
 
       detailsDiv.innerHTML = `
@@ -60,7 +61,7 @@ async function verifyCertificate() {
           <p><strong>Name:</strong> ${fullName}</p>
           <p><strong>Email:</strong> ${email}</p>
           <p><strong>Phone:</strong> ${phone}</p>
-          <p><strong>Father's Name:</strong> ${fatherName}</p>
+          
           <p><strong>College:</strong> ${college}</p>
           <p><strong>Registration Number:</strong> ${registration}</p>
           <p><strong>Course:</strong> ${course}</p>
@@ -68,7 +69,7 @@ async function verifyCertificate() {
           <p><strong>Internship Title:</strong> ${title}</p>
           <p><strong>Domain:</strong> ${domain}</p>
           <p><strong>Certificate Number:</strong> ${certNumber}</p>
-          <p><strong>Issued On:</strong> ${timestamp}</p>
+          <p><strong>Issued On:</strong> ${issueDate}</p>
           <p class="text-green-600 font-semibold mt-2">✅ Certificate Verified Successfully</p>
         </div>
       `;
