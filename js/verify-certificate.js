@@ -44,7 +44,7 @@ async function verifyCertificate() {
         fullName,
         email,
         phone,
-        
+        fatherName,
         college,
         registration,
         course,
@@ -61,7 +61,7 @@ async function verifyCertificate() {
           <p><strong>Name:</strong> ${fullName}</p>
           <p><strong>Email:</strong> ${email}</p>
           <p><strong>Phone:</strong> ${phone}</p>
-          
+          <p><strong>Father's Name:</strong> ${fatherName}</p>
           <p><strong>College:</strong> ${college}</p>
           <p><strong>Registration Number:</strong> ${registration}</p>
           <p><strong>Course:</strong> ${course}</p>
