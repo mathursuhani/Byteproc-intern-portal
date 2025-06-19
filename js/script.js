@@ -82,7 +82,7 @@ const carousel = document.getElementById("testimonial-carousel");
 testimonials.forEach((t, i) => {
   const card = document.createElement("div");
   card.className =
-    "item bg-gradient-to-r from-indigo-900 to-blue-900 p-6 rounded-xl shadow hover:shadow-lg transition";
+    "item bg-gradient-to-r from-blue-800 via-indigo-900 to-blue-900 p-6 rounded-xl shadow hover:shadow-lg transition";
 
   card.innerHTML = `
     <div class="flex items-center gap-4 mb-4">
@@ -96,11 +96,11 @@ testimonials.forEach((t, i) => {
 
         <div>
           <h4 class="font-semibold text-white">${t.name}</h4>
-          <p class="text-sm text-gray-200">- ${t.college}</p>
+          <p class="text-sm text-gray-100">- ${t.college}</p>
           <span class="text-xs inline-block mt-1 bg-white text-blue-900 px-2 py-0.5 rounded-full">${t.Domain}</span>
         </div>
     </div>
-    <p class="text-gray-100 italic">“${t.message}”</p>
+    <p class="text-white italic">“${t.message}”</p>
   `;
   carousel.appendChild(card);
 });
