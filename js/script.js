@@ -43,8 +43,8 @@ function initBackToTop() {
 
 const testimonials = [
   {
-    name: "Aarav Kumar",
-    college: "NIT Patna",
+    name: "Suhani Mathur",
+    college: "MIT Muzaffarpur",
     message:
       "The internship at Byteproc gave me hands-on experience with APIs and React.js. The mentors were incredibly supportive and guided me at every step.",
   },
@@ -55,14 +55,14 @@ const testimonials = [
       "Byteproc helped me gain real-world frontend skills. The feedback and support were amazing throughout. I feel much more confident now.",
   },
   {
-    name: "Riya Sen",
-    college: "BITS Pilani",
+    name: "Suhani Mathur",
+    college: "MIT Muzaffarpur",
     message:
       "I worked on a live project during my internship at Byteproc, and it boosted my resume tremendously. The environment is great for learning and growing.",
   },
   {
-    name: "Aditya Verma",
-    college: "IIIT Hyderabad",
+    name: "Suhani Mathur",
+    college: "MIT Muzaffarpur",
     message:
       "I learned how to work in a team and deliver under deadlines. Byteproc’s guidance prepared me for real-world challenges.",
   },
