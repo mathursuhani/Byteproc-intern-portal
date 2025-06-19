@@ -39,3 +39,17 @@ window.addEventListener("DOMContentLoaded", () => {
     if (domainSelect) domainSelect.value = domain;
   }
 });
+
+const checkbox = document.getElementById("agreeCheckbox");
+const submitBtn = document.getElementById("submitButton");
+
+
+checkbox.addEventListener("change", () => {
+  if (checkbox.checked) {
+    submitBtn.disabled = false;
+    submitBtn.classList.remove("opacity-50", "cursor-not-allowed");
+  } else {
+    submitBtn.disabled = true;
+    submitBtn.classList.add("opacity-50", "cursor-not-allowed");
+  }
+});

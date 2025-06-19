@@ -1,43 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Byteproc Internships | Apply</title>
-    <link rel="stylesheet" href="css/style.css"/>
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="overflow-x-hidden bg-gradient-to-br from-indigo-50 via-white to-blue-100 text-gray-800" >
+  </head>
+  <body
+    class="overflow-x-hidden bg-gradient-to-br from-indigo-50 via-white to-blue-100 text-gray-800"
+  >
     <div id="header-placeholder"></div>
-    <main class="max-w-4xl mx-auto px-4 py-40 transition-all duration-500 ease-in-out animate-fade-in" data-aos="fade-down">
-      <div class="lg:max-w-6xl mx-auto shadow-lg bg-white rounded-2xl shadow-xl p-6 sm:p-10">
-        <h2 class="text-gray-800 font-bold text-2xl sm:text-3xl mb-4 text-center p-4">Apply for Internship</h2>
-        <form action="https://script.google.com/macros/s/AKfycbxyaxXnaId4IZ71ow7ZDjKOZfHLEshDZkVc6v1FSfkUR1EtRGKTXVkLnV2CCVHvPUd7/exec" method="POST" id="applyForm" target="hidden_iframe" onsubmit="handleSubmit(event)" class="space-y-4 px-6 pb-6">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
+    <main
+      class="max-w-4xl mx-auto px-4 py-40 transition-all duration-500 ease-in-out animate-fade-in"
+      data-aos="fade-down"
+    >
+      <div
+        class="lg:max-w-6xl mx-auto shadow-lg bg-white rounded-2xl shadow-xl p-6 sm:p-10"
+      >
+        <h2
+          class="text-gray-800 font-bold text-2xl sm:text-3xl mb-4 text-center p-4"
+        >
+          Apply for Internship
+        </h2>
+        <form
+          action="https://script.google.com/macros/s/AKfycbxyaxXnaId4IZ71ow7ZDjKOZfHLEshDZkVc6v1FSfkUR1EtRGKTXVkLnV2CCVHvPUd7/exec"
+          method="POST"
+          id="applyForm"
+          target="hidden_iframe"
+          onsubmit="handleSubmit(event)"
+          class="space-y-4 px-6 pb-6"
+        >
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
 
-          <input type="text" name="fullName" placeholder="Full Name" class="w-full p-2 border rounded hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-300 " required/>
-          <input type="email" name="email" placeholder="Email" class="w-full p-2 border rounded hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-300" required/>
-          <input type="tel" name="phone" placeholder="Phone Number" class="w-full p-2 border rounded hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-300" required/>
-          <input type="text" name="fatherName" placeholder="Father's Name" class="w-full p-2 border rounded hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-300" required/>
-          <input type="text" name="college" placeholder="College Name" class="w-full p-2 rounded border hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-300" required/>
-          <input type="number" name="registration" placeholder="Registration Number" class="w-full p-2 border rounded hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-300" required/>
-          <select class="w-full p-2 border rounded hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-300" name="course" required>
+          <input
+            type="text"
+            name="fullName"
+            placeholder="Full Name"
+            class="w-full p-2 border rounded hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-300"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            class="w-full p-2 border rounded hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-300"
+            required
+          />
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Phone Number"
+            class="w-full p-2 border rounded hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-300"
+            required
+          />
+          <input
+            type="text"
+            name="fatherName"
+            placeholder="Father's Name"
+            class="w-full p-2 border rounded hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-300"
+            required
+          />
+          <input
+            type="text"
+            name="college"
+            placeholder="College Name"
+            class="w-full p-2 rounded border hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-300"
+            required
+          />
+          <input
+            type="number"
+            name="registration"
+            placeholder="Registration Number"
+            class="w-full p-2 border rounded hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-300"
+            required
+          />
+          <select
+            class="w-full p-2 border rounded hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-300"
+            name="course"
+            required
+          >
             <option value="">Choose Course</option>
             <option>BCA</option>
             <option>B.tech</option>
             <option>M.tech</option>
             <option>MCA</option>
           </select>
-          <input type="text" name="semester" placeholder="Semester" class="w-full p-2 rounded border hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-300" required/>
-          <input type="text" name="title" placeholder="Internship Title" class="w-full p-2 rounded border hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-300" required/>
-          <select class="w-full p-2 border rounded hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-300" name="domain" required>
+          <input
+            type="text"
+            name="semester"
+            placeholder="Semester"
+            class="w-full p-2 rounded border hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-300"
+            required
+          />
+          <input
+            type="text"
+            name="title"
+            placeholder="Internship Title"
+            class="w-full p-2 rounded border hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-300"
+            required
+          />
+          <select
+            class="w-full p-2 border rounded hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-300"
+            name="domain"
+            required
+          >
             <option value="">Choose Domain</option>
             <option>Web Development</option>
             <option>App Development</option>
@@ -50,42 +127,88 @@
             <option>Business Development</option>
           </select>
           <div>
-            <label class="block text-gray-700 font-medium">Upload Passport Size Image<span class="text-sm text-gray-500">(JPG,PNG,MAX 2MB)</span></label>
-            <input type="file" name="image" accept="image/png,image/jpeg,.docx" placeholder="Passport Size Image" class="w-full p-2 rounded border hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-300" required/>
+            <label class="block text-gray-700 font-medium"
+              >Upload Passport Size Image<span class="text-sm text-gray-500"
+                >(JPG,PNG,MAX 2MB)</span
+              ></label
+            >
+            <input
+              type="file"
+              name="image"
+              accept="image/png,image/jpeg,.docx"
+              placeholder="Passport Size Image"
+              class="w-full p-2 rounded border hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-300"
+              required
+            />
           </div>
           <div>
-            <label class="block text-gray-700 font-medium">Upload Resume<span class="text-sm text-gray-500">(PDF,DOC,DOCX)</span></label>
-            <input type="file" name="resume" accept=".pdf,.doc,.docx" placeholder="Passport Size Image" class="w-full p-2 rounded border hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-300" required/>
+            <label class="block text-gray-700 font-medium"
+              >Upload Resume<span class="text-sm text-gray-500"
+                >(PDF,DOC,DOCX)</span
+              ></label
+            >
+            <input
+              type="file"
+              name="resume"
+              accept=".pdf,.doc,.docx"
+              placeholder="Passport Size Image"
+              class="w-full p-2 rounded border hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-300"
+              required
+            />
           </div>
-          
-          <button type="submit" class="w-full  bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Submit Application</button>
+          <div class="flex items-center gap-2 mt-4">
+            <input
+              type="checkbox"
+              id="agreeCheckbox"
+              class="w-4 h-4 text-indigo-600 border-gray-300 rounded"
+            />
+            <label for="agreeCheckbox" class="text-sm text-gray-700">
+              I have read and agree to the
+              <a
+                href="TermsCondition.html"
+                target="_blank"
+                class="text-indigo-600 underline"
+                >Terms and Conditions</a
+              >
+            </label>
+          </div>
 
-          
+          <button
+            type="submit"
+            id="submitButton"
+            class="w-full bg-blue-600 text-white py-2 mt-4 rounded opacity-50 cursor-not-allowed"
+            disabled
+          >
+            Submit Application
+          </button>
         </form>
-        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+        <iframe
+          name="hidden_iframe"
+          id="hidden_iframe"
+          style="display: none"
+        ></iframe>
       </div>
     </main>
-    
 
     <div id="footer-placeholder"></div>
     <script>
       fetch("footer.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("footer-placeholder").innerHTML = data;
-      })
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        });
     </script>
     <script>
-        fetch("header.html")
-        .then(res => res.text())
-        .then(data => {
-            document.getElementById("header-placeholder").innerHTML = data;
-            initHeaderMenu();
+      fetch("header.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("header-placeholder").innerHTML = data;
+          initHeaderMenu();
         });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script src="js/header-footer.js"></script>
     <script src="js/apply.js"></script>
-</body>
+  </body>
 </html>

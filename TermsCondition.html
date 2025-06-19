@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Internship Terms and Conditions | Byteproc</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="overflow-x-hidden bg-gradient-to-br from-blue-50 to-purple-50 text-gray-800"
+  >
+    <div id="header-placeholder"></div>
+
+    <main class="max-w-4xl mx-auto px-6 py-40">
+      <div class="text-center mb-12" data-aos="fade-down">
+        <h1
+          class="font-bold text-lg text-gray-900 items-center sm:text-3xl mb-4"
+        >
+          Internship Terms & Conditions
+        </h1>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Please review the following terms before starting your internship at
+          Byteproc. These ensure a smooth and professional experience for both
+          interns and the organization.
+        </p>
+      </div>
+
+      <div class="space-y-10">
+        <section
+          class="p-6 bg-white shadow-md rounded-xl p-6"
+          data-aos="fade-up"
+        >
+          <h2 class="text-2xl text-indigo-700 mb-2 font-semibold">
+            1.Eligibilty:
+          </h2>
+          <p>
+            Applicants must be students or recent graduates with relevant
+            academic background. All submitted information must be accurate and
+            verifiable.
+          </p>
+        </section>
+        <section
+          class="p-6 bg-white shadow-md rounded-xl p-6"
+          data-aos="fade-up"
+        >
+          <h2 class="text-2xl text-indigo-700 mb-2 font-semibold">
+            2.Internship Duration:
+          </h2>
+          <p>
+            Internship durations range from 1 to 6 months. The duration will be
+            confirmed in your selection email and may vary based on domain and
+            role.
+          </p>
+        </section>
+        <section data-aos="fade-up" class="bg-white shadow-md rounded-xl p-6">
+          <h2 class="text-2xl font-semibold text-indigo-700 mb-2">
+            3. Code of Conduct
+          </h2>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Maintain professionalism and respect in all communications.</li>
+            <li>Avoid plagiarism or misuse of project resources.</li>
+            <li>
+              Be punctual, responsive, and committed throughout the internship.
+            </li>
+          </ul>
+        </section>
+        <section data-aos="fade-up" class="bg-white shadow-md rounded-xl p-6">
+          <h2 class="text-2xl font-semibold text-indigo-700 mb-2">
+            4. Stipend & Certificates
+          </h2>
+          <ul class="list-disc list-inside space-y-1">
+            <li>
+              Stipends (if applicable) will be shared post-completion via
+              UPI/bank transfer.
+            </li>
+            <li>
+              Certificate of Completion will only be given after fulfilling all
+              internship tasks and submitting final deliverables.
+            </li>
+          </ul>
+        </section>
+        <section data-aos="fade-up" class="bg-white shadow-md rounded-xl p-6">
+          <h2 class="text-2xl font-semibold text-indigo-700 mb-2">
+            5. Confidentiality
+          </h2>
+          <p>
+            Interns must not disclose, reproduce or share any project
+            information outside Byteproc without written consent. Breach of
+            confidentiality may result in termination.
+          </p>
+        </section>
+
+        <section data-aos="fade-up" class="bg-white shadow-md rounded-xl p-6">
+          <h2 class="text-2xl font-semibold text-indigo-700 mb-2">
+            6. Termination Policy
+          </h2>
+          <p>
+            Byteproc reserves the right to terminate the internship if the
+            intern fails to comply with the terms, misses deadlines, or behaves
+            inappropriately.
+          </p>
+        </section>
+
+        <section
+          data-aos="fade-up"
+          class="bg-white shadow-md rounded-xl p-6 text-center"
+        >
+          <h2 class="text-2xl font-semibold text-indigo-700 mb-4">
+            Final Agreement
+          </h2>
+          <p class="mb-4 text-gray-700 text-base sm:text-lg">
+            By proceeding with the application, you acknowledge that you have
+            read, understood, and agree to abide by the above internship terms
+            and conditions.
+          </p>
+          <p class="text-sm text-gray-500 italic">
+            We encourage all applicants to carefully review each point for a
+            smooth internship experience.
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script>
+      fetch("footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        });
+    </script>
+    <script>
+      fetch("header.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("header-placeholder").innerHTML = data;
+          initHeaderMenu();
+        });
+    </script>
+    <script src="js/header-footer.js"></script>
+    <script src="js/TermsCondition.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  </body>
+</html>
