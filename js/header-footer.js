@@ -43,19 +43,34 @@ function initHeaderMenu() {
     
   });
   window.addEventListener("scroll", () => {
-  const topBar = document.getElementById("top-bar");
-  const header = document.getElementById("main-header");
+    const topBar = document.getElementById("top-bar");
+    const mainHeader = document.getElementById("main-header");
+    const headerInner = document.getElementById("header-inner");
 
-  if (window.scrollY > 0) {
-    topBar.classList.add("opacity-0", "-translate-y-full");
-    header.classList.remove("top-[40px]");
-    header.classList.add("top-0");
-  } else {
-    topBar.classList.remove("opacity-0", "-translate-y-full");
-    header.classList.remove("top-0");
-    header.classList.add("top-[40px]");
-  }
-});
+    if (window.scrollY > 0) {
+      // Hide top bar
+      topBar.style.transform = "translateY(-100%)";
+      topBar.style.opacity = "0";
+
+      // Move header to top
+      mainHeader.style.top = "0px";
+
+      // Shrink header height
+      headerInner.classList.remove("py-6");
+      headerInner.classList.add("py-6");
+    } else {
+      // Show top bar
+      topBar.style.transform = "translateY(0)";
+      topBar.style.opacity = "1";
+
+      // Push header down below top bar
+      mainHeader.style.top = "40px";
+
+      // Restore header height
+      headerInner.classList.remove("py-3");
+      headerInner.classList.add("py-6");
+    }
+  });
 
 }
 
