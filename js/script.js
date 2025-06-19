@@ -43,45 +43,78 @@ function initBackToTop() {
 
 const testimonials = [
   {
-    name: "Suhani Mathur",
-    college: "MIT Muzaffarpur",
+    name: "Ashish",
+    college: "NIT Jalandhar",
+    Domain: "Android Development",
+    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
     message:
-      "The internship at Byteproc gave me hands-on experience with APIs and React.js. The mentors were incredibly supportive and guided me at every step.",
+      "Working in the Android Development domain at Byteproc was a transformative experience. I built real apps, integrated APIs, and improved my Kotlin skills significantly.",
   },
   {
     name: "Suhani Mathur",
     college: "MIT Muzaffarpur",
+    Domain: "Web Development",
+    avatar: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?crop=faces&fit=crop&h=200&w=200",
     message:
-      "Byteproc helped me gain real-world frontend skills. The feedback and support were amazing throughout. I feel much more confident now.",
+      "Byteproc helped me sharpen my frontend development skills. I worked with HTML, Tailwind CSS, and JavaScript to build production-ready web pages with real feedback from mentors.",
   },
   {
-    name: "Suhani Mathur",
-    college: "MIT Muzaffarpur",
+    name: "Jatin",
+    college: "BMS Bangalore",
+    Domain: "Web Development",
+    avatar: "https://images.unsplash.com/photo-1573497491208-6b1acb260507?crop=faces&fit=crop&h=200&w=200",
     message:
-      "I worked on a live project during my internship at Byteproc, and it boosted my resume tremendously. The environment is great for learning and growing.",
+      "During my web development internship, I contributed to live project modules and learned responsive design and form handling. It was an amazing journey that boosted my confidence.",
   },
   {
-    name: "Suhani Mathur",
-    college: "MIT Muzaffarpur",
+    name: "Vipul",
+    college: "MGCU Bihar",
+    Domain: "Marketing",
+    avatar: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?crop=faces&fit=crop&h=200&w=200",
     message:
-      "I learned how to work in a team and deliver under deadlines. Byteproc’s guidance prepared me for real-world challenges.",
+      "My internship in the marketing domain at Byteproc taught me how to craft strategies, run campaigns, and analyze audience engagement. I gained hands-on experience with real tools.",
   },
 ];
 
-const container = document.getElementById("testimonial-container");
-testimonials.forEach((t,i) => {
+
+
+const carousel = document.getElementById("testimonial-carousel");
+testimonials.forEach((t, i) => {
   const card = document.createElement("div");
-  card.className = "bg-gradient-to-r from-indigo-900 to-blue-900 p-6 rounded-xl shadow hover:shadow-lg transition";
-  card.setAttribute("data-aos", "fade-up");
+  card.className =
+    "item bg-gradient-to-r from-indigo-900 to-blue-900 p-6 rounded-xl shadow hover:shadow-lg transition";
+
   card.innerHTML = `
     <div class="flex items-center gap-4 mb-4">
-        <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" alt="Avatar" class="w-12 h-12 rounded-full object-cover" />
+        <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white shrink-0">
+          <img
+          src="${t.avatar}"
+          alt="${t.name}'s Avatar"
+          class="w-full h-full object-cover"
+        />
+    </div>
+
         <div>
           <h4 class="font-semibold text-white">${t.name}</h4>
           <p class="text-sm text-gray-200">- ${t.college}</p>
+          <span class="text-xs inline-block mt-1 bg-white text-blue-900 px-2 py-0.5 rounded-full">${t.Domain}</span>
         </div>
     </div>
-    <p class="text-gray-100">“${t.message}”</p>
+    <p class="text-gray-100 italic">“${t.message}”</p>
   `;
-  container.appendChild(card);
+  carousel.appendChild(card);
+});
+
+$(document).ready(function () {
+  $("#testimonial-carousel").owlCarousel({
+    loop: true,
+    margin: 20,
+    autoplay: true,
+    autoplayTimeout: 4000,
+    responsive: {
+      0: { items: 1 },
+      768: { items: 2 },
+      1024: { items: 3 },
+    },
+  });
 });
