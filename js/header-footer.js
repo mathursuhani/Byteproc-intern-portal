@@ -67,7 +67,7 @@ function initHeaderMenu() {
       mainHeader.style.top = "40px";
 
       // Restore header height
-      headerInner.classList.remove("py-3");
+      headerInner.classList.remove("py-6");
       headerInner.classList.add("py-6");
     }
   });
