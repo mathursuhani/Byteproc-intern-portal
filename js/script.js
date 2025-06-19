@@ -110,7 +110,7 @@ $(document).ready(function () {
     loop: true,
     margin: 20,
     autoplay: true,
-    autoplayTimeout: 4000,
+    autoplayTimeout: 5000,
     responsive: {
       0: { items: 1 },
       768: { items: 2 },
