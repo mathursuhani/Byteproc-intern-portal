@@ -83,7 +83,8 @@ testimonials.forEach((t, i) => {
   const card = document.createElement("div");
   card.className =
     "item bg-gradient-to-r from-blue-800 via-indigo-900 to-blue-900 p-6 rounded-xl shadow hover:shadow-lg transition";
-
+  card.setAttribute("data-aos", "zoom-in");
+  card.setAttribute("data-aos-delay", `${i * 100}`);
   card.innerHTML = `
     <div class="flex items-center gap-4 mb-4">
         <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white shrink-0">
@@ -109,7 +110,7 @@ $(document).ready(function () {
   $("#testimonial-carousel").owlCarousel({
     loop: true,
     margin: 20,
-    center: true,
+  
     autoplay: true,
     autoplayTimeout: 5000,
     responsive: {
