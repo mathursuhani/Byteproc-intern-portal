@@ -7,7 +7,7 @@ const swiper = new Swiper(".mySwiper", {
   slidesPerView: 1,
   loop: true,
   autoplay: {
-    delay: 3000,
+    delay: 4000,
     disableOnInteraction: false,
   },
   coverflowEffect: {
@@ -109,6 +109,7 @@ $(document).ready(function () {
   $("#testimonial-carousel").owlCarousel({
     loop: true,
     margin: 20,
+    center: true,
     autoplay: true,
     autoplayTimeout: 5000,
     responsive: {
